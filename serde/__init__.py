@@ -51,7 +51,6 @@ from .se import asdict, astuple, default_serializer, is_serializable, serialize,
 
 def serde(_cls=None, **kwargs):
     def wrap(cls):
-        dataclasses.dataclass(cls)
         serialize(cls, **kwargs)
         deserialize(cls, **kwargs)
         return cls
